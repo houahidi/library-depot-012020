@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.orsys.formation</groupId>
+  <artifactId>library-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>LibraryParent</name>
+  <description>Gestion de biblioth�que</description>
+  
+  <properties>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <log4j.version>1.2.17</log4j.version> 
+      <!-- d�finir des propprietes de l'ensemble du projet --> 
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>${log4j.version}</version> <!-- utilisation d'une propriete -->
+  	</dependency>
+  	<!--  junit -->
+  	  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <modules>
+
+
+  <module>library-dao</module>
+  <module>library-service</module>
+    <module>library-web</module>
+  </modules>
+</project>
