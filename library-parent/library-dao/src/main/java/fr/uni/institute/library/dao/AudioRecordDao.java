@@ -6,7 +6,7 @@ import fr.uni.institute.library.business.inventory.AudioRecord;
 
 public interface AudioRecordDao {
 
-	public Collection<AudioRecord> researchAllAudioRecords() throws DaoException ;
+	public Collection researchAllAudioRecords() throws DaoException ;
 
 	public AudioRecord researchAudioRecordById(int id) throws DaoException ;
 
