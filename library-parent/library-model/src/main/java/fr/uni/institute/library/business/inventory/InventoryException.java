@@ -2,6 +2,11 @@ package fr.uni.institute.library.business.inventory;
 
 public class InventoryException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public InventoryException() {
 	}
 
