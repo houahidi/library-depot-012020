@@ -1,0 +1,31 @@
+
+1 - démarrer sonarcube 
+
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+2 - ajouter la conf de sonar au setting.xml
+
+ 		<profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>http://192.168.45.100:9000</sonar.host.url>
+            </properties>
+        </profile>
+
+ 3 - ajouter le plugin au build pom.xml
+ <pluginManagement>
+  	<plugins>  			
+  		<plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.7.0.1746</version>
+        </plugin>
+  	
+  	</plugins>
+  
+  </pluginManagement>
+ 

@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>LibraryParent</name>
-  <description>Gestion de biblioth�que</description>
+  <description>Gestion de bibliothèque</description>
   
   <properties>
       <maven.compiler.source>1.8</maven.compiler.source>
@@ -17,11 +17,43 @@
   </properties>
   
   
-  
+  <reporting>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>3.1.0</version>
+	  			</plugin>
+	  			
+	  			<plugin>
+		    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jxr-plugin -->
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-jxr-plugin</artifactId>
+		    <version>3.0.0</version>
+		</plugin>
+		<!-- 
+		<plugin>
+		  <groupId>org.codehaus.mojo</groupId>
+		    <artifactId>findbugs-maven-plugin</artifactId>
+		    <version>3.0.5</version>  		
+  		</plugin>
+  		 -->
+  		<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+		</plugin>
+		<!-- 
+		 <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-javadoc-plugin</artifactId>
+	        <version>3.0.1</version>
+		</plugin> -->
+	  		</plugins>  
+  </reporting>
   
   
   <distributionManagement>
-
 		<repository>
 			<id>nexus</id>
 			<name>My releases</name>
@@ -58,7 +90,11 @@
 					</dependency>
 				</dependencies>		  		
   		</plugin>	
-  		
+  		<plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.7.0.1746</version>
+        </plugin>
   	
   	</plugins>
   
@@ -82,11 +118,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <modules>
 
-
-  <module>library-dao</module>
-  <module>library-service</module>
+	<module>library-model</module>
+  	<module>library-dao</module>
+  	<module>library-service</module>
     <module>library-web</module>
+    
   </modules>
 </project>
